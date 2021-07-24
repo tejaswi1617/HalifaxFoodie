@@ -3,7 +3,7 @@ import Signup from './components/Signup';
 import Login from './components/Login';
 import Dashboard from './Dashboard';
 import Profile from './Profile';
-// import UserPool from './UserPool';
+// import UserPool from './UserPool'
 
 
 import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
@@ -11,23 +11,27 @@ import '../src/main.css'
 import Question from './components/Question';
 import { Auth } from 'aws-amplify';
 import { useEffect } from 'react';
+import db from './firebase';
 
 function App() {
+
+   
     useEffect(async () => {
 
-       !JSON.parse( localStorage.getItem("IsQuestion")) &&
-            await Auth.currentAuthenticatedUser().then((obj) => {
-                
+    //     debugger
+    //    !JSON.parse( localStorage.getItem("IsQuestion")) &&
+    //         await Auth.currentAuthenticatedUser().then((obj) => {
+            
+    //             const user = {
+    //                 username: obj.username,
+    //                 email: obj.attributes.email,
 
-                const user = {
-                    username: obj.username,
-                    email: obj.attributes.email,
-
-                }
-                console.log(obj);
-                localStorage.setItem("user", JSON.stringify(user))
-                localStorage.setItem("IsQuestion", false)
-            })
+    //             }
+    //             console.log(obj);
+    //             debugger
+    //             localStorage.setItem("user", JSON.stringify(user))
+    //             localStorage.setItem("IsQuestion", false)
+    //         })
     }, [])
     return (
         <>
@@ -36,7 +40,7 @@ function App() {
                 <Router>
                     <Switch>
                         <Route exact path="/" component={Question} />
-
+                        {/* <Route exact path="/dashboard" component={Dashboard} /> */}
                     </Switch>
                 </Router>
                 :
