@@ -3,41 +3,57 @@ import axios from 'axios';
 import { Table } from 'reactstrap';
 import { useHistory } from 'react-router-dom';
 
+import LexChat from "react-lex";
+
 export default function Dashboard() {
 
-    const [Data, setData] = useState()
-    const [AllData, setAllData] = useState()
-    const history = useHistory();
+    // const [Data, setData] = useState()
+    // const [AllData, setAllData] = useState()
+    // const history = useHistory();
 
-    useEffect(() => {
-        getUseDetails()
-    }, [])
+    // useEffect(() => {
+    //     getUseDetails()
+    // }, [])
 
-    const getUseDetails = async () => {
-        await axios.get('https://tutorial4-api.herokuapp.com/api/users')
-            .then((response) => {
-                console.log("response data: ", response.data.data)
-                setData(response.data.data)
-                setAllData(response.data.data)
-            })
-    }
+    // const getUseDetails = async () => {
+    //     await axios.get('https://tutorial4-api.herokuapp.com/api/users')
+    //         .then((response) => {
+    //             console.log("response data: ", response.data.data)
+    //             setData(response.data.data)
+    //             setAllData(response.data.data)
+    //         })
+    // }
 
-    const viewProfile = async (id) => {
+    // const viewProfile = async (id) => {
 
-        await history.push(`/profile/${id}`);
-    }
+    //     await history.push(`/profile/${id}`);
+    // }
 
-    const onFilter = (e)=> {
+    // const onFilter = (e)=> {
         
-        let result =[];
-        result = AllData.filter((filter) =>
-            filter.firstName.toLowerCase().includes(e.target.value.toLowerCase()) ||
-            filter.lastName.toLowerCase().includes(e.target.value.toLowerCase()) )
+    //     let result =[];
+    //     result = AllData.filter((filter) =>
+    //         filter.firstName.toLowerCase().includes(e.target.value.toLowerCase()) ||
+    //         filter.lastName.toLowerCase().includes(e.target.value.toLowerCase()) )
 
-        setData(result);
-    }
+    //     setData(result);
+    // }
     return (
         <>
+
+<LexChat
+      botName="HalifaxFoodie"
+      IdentityPoolId="us-east-1:490d8d9b-4877-4f91-a06d-aee20121e312"
+      placeholder="Placeholder text"
+      backgroundColor="#FFFFFF"
+      height="430px"
+      region="us-east-1"
+      headerText="Chat with our awesome bot"
+      headerStyle={{ backgroundColor: "#ABD5D9", fontSize: "30px" }}
+      greeting={
+        "Hello, how can I help? You can say things like 'help' to get more info"
+      }
+    />
             {/* <div className="all-content-center">
                 <div className="ccontainer">
                     <div className="center-box">
@@ -51,7 +67,7 @@ export default function Dashboard() {
                     </div>
                 </div>
             </div> */} 
-            <div className="mt-5 text-center">
+            {/* <div className="mt-5 text-center">
                 <form>
                 Search:<input  type = "text" name="search" onChange = {(e)=>{onFilter(e)}} />
                 </form>
@@ -86,7 +102,7 @@ export default function Dashboard() {
                     </tbody>
                 </Table>
             </div>
-
+ */}
 
 
         </>

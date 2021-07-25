@@ -51,7 +51,7 @@ export default function Question() {
 
     const onSubmitForm = async (e) => {
         e.preventDefault();
-        debugger
+        
         if (setQuestion) {
 
 
