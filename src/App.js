@@ -3,6 +3,7 @@ import Signup from './components/Signup';
 import Login from './components/Login';
 import Dashboard from './Dashboard';
 import Profile from './Profile';
+import Chatbot from './components/Chatbot';
 // import UserPool from './UserPool'
 
 
@@ -52,7 +53,7 @@ function App() {
                         <Route exact path="/dashboard" component={Dashboard} />
                         <Route exact path="/profile/:id" component={Profile} />
                         <Route exact path="/question" component={Question} />
-
+                        <Route exact path="/chatbot" component={Chatbot} />
                     </Switch>
                 </Router>
 
