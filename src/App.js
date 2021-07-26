@@ -4,6 +4,8 @@ import Login from './components/Login';
 import Dashboard from './Dashboard';
 import Profile from './Profile';
 import Chatbot from './components/Chatbot';
+import Order from './components/orderPage';
+import GiveRating from './giveRating'
 // import UserPool from './UserPool'
 
 
@@ -54,6 +56,9 @@ function App() {
                         <Route exact path="/profile/:id" component={Profile} />
                         <Route exact path="/question" component={Question} />
                         <Route exact path="/chatbot" component={Chatbot} />
+                        <Route exact path="/order" component={Order} />
+						<Route exact path="/giveratings" component={GiveRating}/>
+                    
                     </Switch>
                 </Router>
 
