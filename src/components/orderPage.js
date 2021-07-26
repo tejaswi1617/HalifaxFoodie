@@ -11,7 +11,7 @@
      constructor(props) {
          super(props)
          this.state = {
-			 user: JSON.parse(localStorage.getItem("user"))
+			 user: JSON.parse(localStorage.getItem("user")),
              food: [],
              recommandation: []
          }

@@ -5,7 +5,8 @@ import Dashboard from './Dashboard';
 import Profile from './Profile';
 import Chatbot from './components/Chatbot';
 import Order from './components/orderPage';
-import GiveRating from './giveRating'
+import GiveRating from './components/giveRating';
+import PubSubChat from './components/pubsub';
 // import UserPool from './UserPool'
 
 
@@ -51,7 +52,7 @@ function App() {
                     <Switch>
                         <Route exact path="/" component={Dashboard} />
                         <Route exact path="/register" component={Signup} />
-
+                        <Route exact path="/pubsub" component={PubSubChat} />
                         <Route exact path="/dashboard" component={Dashboard} />
                         <Route exact path="/profile/:id" component={Profile} />
                         <Route exact path="/question" component={Question} />
