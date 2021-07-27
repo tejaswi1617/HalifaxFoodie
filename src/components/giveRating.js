@@ -33,13 +33,16 @@ export class giveRating extends Component {
     }
     render() {
         return (
-            <Row>
+            <Row className="rating-content">
+                <div>
+                    <h2>Please give your feedback</h2>
+                </div>
                 <div>
                     <input type="text" palceholder="Add task" name="rating" value={this.state.rating} onChange={this.onValueChange} />
                 </div>
                 <div className="add-button">
-                    <Button className="primary-button add-button" onClick={this.saveItem}>Submit</Button>
-                    <Button className="primary-button add-button" onClick={this.cancel}>Cancel</Button>
+                    <Button className="primary-button" onClick={this.saveItem}>Submit</Button>
+                    <Button className="primary-button" onClick={this.cancel}>Cancel</Button>
                 </div>
             </Row>
         )

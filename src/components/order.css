@@ -21,7 +21,13 @@
     background: powderblue;
     margin-bottom: 1rem;
 }
-
+.primary-button{
+    margin-right: 0.5rem;
+    margin-top: 0.5rem;
+}
+.rating-content{
+    text-align: center;
+}
 
 .to-do-list-items {
     display: flex;
