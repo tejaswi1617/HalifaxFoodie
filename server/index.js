@@ -5,7 +5,7 @@ const cors = require('cors')
 const port = process.env.PORT || 5000;
 
 const pubsubRoute = require('./api/routes/pubsub')
-
+const wordcloudRoute = require('./api/routes/wordcloud')
 
 app.use(cors())
 app.use(express.urlencoded({ limit: '5mb', extended: true }))

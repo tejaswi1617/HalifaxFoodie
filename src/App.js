@@ -7,6 +7,7 @@ import Chatbot from './components/Chatbot';
 import Order from './components/orderPage';
 import GiveRating from './components/giveRating';
 import PubSubChat from './components/pubsub';
+import WordCloud from './components/wordCloud';
 // import UserPool from './UserPool'
 
 
@@ -59,7 +60,7 @@ function App() {
                         <Route exact path="/chatbot" component={Chatbot} />
                         <Route exact path="/order" component={Order} />
 						<Route exact path="/giveratings" component={GiveRating}/>
-                    
+						<Route exact path="/wordcloud" component={WordCloud}/>
                     </Switch>
                 </Router>
 

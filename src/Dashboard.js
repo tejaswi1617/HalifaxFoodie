@@ -2,14 +2,14 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Table } from 'reactstrap';
 import { useHistory } from 'react-router-dom';
-
+import { Container, Col, Row, Button } from 'react-bootstrap'
 import LexChat from "react-lex";
 
 export default function Dashboard() {
 
     // const [Data, setData] = useState()
     // const [AllData, setAllData] = useState()
-    // const history = useHistory();
+    const history = useHistory();
 
     // useEffect(() => {
     //     getUseDetails()
@@ -38,9 +38,28 @@ export default function Dashboard() {
 
     //     setData(result);
     // }
+    const chatbot =() =>{
+        history.push('/chatbot')
+    }
+    const orderitem =()=>{
+        history.push('/order')
+    }
+    const wordcloud=()=>{
+        history.push('/wordcloud')
+    }
     return (
-        <>
-
+        <div>
+        <Row>
+            <Col>
+                <Button className="add-button" onClick={()=>chatbot()}>Chatbot</Button>
+            </Col>
+            <Col>
+                <Button className="add-button" onClick={()=>orderitem()}>Order Page</Button>
+            </Col>
+            <Col>
+                <Button className="add-button" onClick={()=>wordcloud()}>Word Cloud</Button>
+            </Col>
+        </Row>                            
 <LexChat
       botName="HalifaxFoodie"
       IdentityPoolId="us-east-1:490d8d9b-4877-4f91-a06d-aee20121e312"
@@ -105,6 +124,6 @@ export default function Dashboard() {
  */}
 
 
-        </>
+    </div>
     )
 }

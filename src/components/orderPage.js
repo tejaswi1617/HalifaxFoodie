@@ -19,7 +19,7 @@
      }
  
      componentDidMount() {
-         axios.post('https://ajrx3u87zg.execute-api.us-east-1.amazonaws.com/default/recommandation','vv219484').then(resposne =>{
+         axios.post('https://ajrx3u87zg.execute-api.us-east-1.amazonaws.com/default/recommandation',this.state.user.username).then(resposne =>{
              console.log(resposne.data[0]['food'])
              console.log(resposne.data[0]['recommandation'])
              this.setState({food:resposne.data[0]['food'],recommandation:resposne.data[0]['recommandation']})
@@ -29,7 +29,7 @@
      orderitem (row){
        
         const url = 'https://gzo7e4bb6i.execute-api.us-east-1.amazonaws.com/default/addInDb?'+'foodName'+'='+row['foodName']+'&'+'foodId'+'='+row['foodId']+'&'+
-        'price='+ row['price']+'&'+'ingredient='+ row['ingredient']+'&'+'userName=Vivek123' +'&'+'orderId=123'
+        'price='+ row['price']+'&'+'ingredient='+ row['ingredient']+'&'+'userName='+this.state.user.username
         axios.post(url).then(resposne =>{
             if(resposne){
                 alert("Ordered "+row['foodName'] +" Successfully")
@@ -45,7 +45,7 @@
             <Row className="to-do-list-items">
                 <Col md={12} lg={6} >
                     <div>
-                        <h1>Order Your Food</h1>
+                        <h2>Order Your Food</h2>
                         {this.state.food.map(row => (
                             <Card className="card-content-incomplete">
                                 <Row className="card-item">
@@ -53,7 +53,6 @@
                                         <Card.Body>
                                             <Card.Title>Food: {row.foodName}</Card.Title>
                                             <Card.Title>Price: ${row.price}</Card.Title>
-                                            <Card.Title>Restaurant: {row.restaurantName}</Card.Title>
                                             <Card.Title>Ingredients: {row.ingredient}</Card.Title>
                                         </Card.Body>
                                     </Col>
@@ -67,13 +66,12 @@
                 </Col>
                 <Col md={12} lg={6}>
                     <div>
-                        <h1>Recommanded Food</h1>
+                        <h2>Recommanded Food</h2>
                         {this.state.recommandation.map(row => (
                             <Card>
                                 <Card.Body>
-                                    <Card.Title className="card-item-completed">{row.foodName}</Card.Title>
-                                    <Card.Title className="card-item-completed">{row.price}</Card.Title>
-                                    <Card.Title className="card-item-completed">{row.restaurantName}</Card.Title>
+                                    <Card.Title className="card-item-completed">Food Name:{row.foodName}</Card.Title>
+                                    <Card.Title className="card-item-completed">Price:{row.price}</Card.Title>
                                 </Card.Body>
                             </Card>
                         ))}
