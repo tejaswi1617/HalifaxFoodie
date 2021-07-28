@@ -1,0 +1,28 @@
+.userOne {
+    display:grid;
+    width: 300px;
+    float: left;
+}
+
+.userOne button {
+    width: 90px;
+    align-items: center;
+    align-content: center;
+}
+
+.userTwo {
+    display:grid;
+    width: 300px;
+    float: right;
+}
+
+.userTwo button {
+    width: 90px;
+    align-items: center;
+    align-content: center;
+}
+
+.message {
+    font-weight: bolder;
+    font-size: larger;  
+}
