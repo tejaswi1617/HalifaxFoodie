@@ -15,19 +15,21 @@ function RecipeUpload() {
     const [ingredient7, setIngredient7] = useState('')
     const [ingredient8, setIngredient8] = useState('')
 
-
-    const submitAdd = () => {
-        Axios.post('https://csci5410-backend.herokuapp.com/recipe', {
-            ingredient0: ingredient0,
-            ingredient1: ingredient1,
-            ingredient2: ingredient2,
-            ingredient3: ingredient3,
-            ingredient4: ingredient4,
-            ingredient5: ingredient5,
-            ingredient6: ingredient6,
-            ingredient7: ingredient7,
-            ingredient8: ingredient8
-        }).then((response) => {
+    let ingredients = {
+        ingredients0: ingredient0,
+        ingredients1: ingredient1,
+        ingredients2: ingredient2,
+        ingredients3: ingredient3,
+        ingredients4: ingredient4,
+        ingredients5: ingredient5,
+        ingredients6: ingredient6,
+        ingredients7: ingredient7,
+        ingredients8: ingredient8
+    };
+    const submitAdd =  () => {
+        
+      //  console.log( JSON.stringify(ingredients));
+         Axios.post('https://us-central1-diesel-ellipse-321017.cloudfunctions.net/function-1', ingredients ).then((response) => {
             console.log(response);
             let avg = (response.data.upper_bound / response.data.lower_bound);
             alert("Similarity Score is: " + avg.toFixed(2));
