@@ -15,7 +15,7 @@ export class wordCloud extends Component {
         axios.get('https://rjge7dn3y4.execute-api.us-east-1.amazonaws.com/default/getreviews').then(resposne =>{
             console.log(resposne.data)
             this.setState({text:resposne.data})
-            axios.post('https://vivek-halifaxfoodie.web.app/wordcloud/data',this.state).then(resposne=>{
+            axios.post('https://csci5410-backend.herokuapp.com/wordcloud/data',this.state).then(resposne=>{
                 console.log(resposne.data)
                 this.setState({imageUrl:resposne.data})
             })

@@ -17,7 +17,7 @@ function RecipeUpload() {
 
 
     const submitAdd = () => {
-        Axios.post('https://us-central1-diesel-ellipse-321017.cloudfunctions.net/function-1', {
+        Axios.post('https://csci5410-backend.herokuapp.com/recipe', {
             ingredient0: ingredient0,
             ingredient1: ingredient1,
             ingredient2: ingredient2,

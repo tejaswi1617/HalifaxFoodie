@@ -7,7 +7,7 @@ function PubSubChat() {
   const [message, setMessage] = useState("")
 
   // useEffect(() => {
-  //   axios.get("http://localhost:5000/pubsub/receive/", {
+  //   axios.get("https://csci5410-backend.herokuapp.com/pubsub/receive/", {
   //     subscriptionName: "frontendtest-sub"
   //   }).then((response) => {
   //     console.log(response)
@@ -15,7 +15,7 @@ function PubSubChat() {
   // }, []);
 
   const createTopic = () => {
-    axios.post("http://localhost:5000/pubsub/createTopic/", {
+    axios.post("https://csci5410-backend.herokuapp.com/pubsub/createTopic/", {
       topicName: topicName
     }).then((response) => {
       console.log(response)
@@ -23,7 +23,7 @@ function PubSubChat() {
   }
 
   const createSubscription = () => {
-    axios.post("http://localhost:5000/pubsub/createSubscription/", {
+    axios.post("https://csci5410-backend.herokuapp.com/pubsub/createSubscription/", {
       topicName: topicName,
       subscriptionName: subscriptionName
     }).then((response) => {
@@ -32,7 +32,7 @@ function PubSubChat() {
   }
 
   const publishMessage = () => {
-    axios.post("http://localhost:5000/pubsub/publish/", {
+    axios.post("https://csci5410-backend.herokuapp.com/pubsub/publish/", {
       topicName: topicName,
       data: message
     }).then((response) => {
@@ -41,7 +41,7 @@ function PubSubChat() {
   }
 
   const receiveMessage = () => {
-    axios.get("http://localhost:5000/pubsub/receive/" + subscriptionName).then((response) => {
+    axios.get("https://csci5410-backend.herokuapp.com/pubsub/receive/" + subscriptionName).then((response) => {
       console.log(response)
     })
   }
