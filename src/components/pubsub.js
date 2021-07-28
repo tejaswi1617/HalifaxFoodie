@@ -6,7 +6,7 @@ function PubSubChat() {
   const [topicName, setTopicName] = useState("");
   const [subscriptionName, setSubscriptionName] = useState("");
   const [message, setMessage] = useState("")
-  const [data, setData] = useState([])
+  const [data, setData] = useState("")
 
   const createTopic = () => {
     axios.post("https://csci5410-backend.herokuapp.com/pubsub/createTopic/", {
