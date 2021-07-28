@@ -8,6 +8,8 @@ import Order from './components/orderPage';
 import GiveRating from './components/giveRating';
 import PubSubChat from './components/pubsub';
 import WordCloud from './components/wordCloud';
+import Visualization from './visualization';
+import RecipeUpload from './RecipeUpload';
 // import UserPool from './UserPool'
 
 
@@ -61,6 +63,8 @@ function App() {
                         <Route exact path="/order" component={Order} />
 						<Route exact path="/giveratings" component={GiveRating}/>
 						<Route exact path="/wordcloud" component={WordCloud}/>
+                        <Route exact path="/recipeupload" component={RecipeUpload}/>
+                        <Route exact path="/visualization" component={Visualization}/>
                     </Switch>
                 </Router>
 

@@ -47,6 +47,12 @@ export default function Dashboard() {
     const wordcloud=()=>{
         history.push('/wordcloud')
     }
+    const recipeUpload=()=>{
+        history.push('/recipeupload')
+    }
+    const visual=()=>{
+        history.push('/visualization')
+    }
     return (
         <div>
         <Row>
@@ -58,6 +64,12 @@ export default function Dashboard() {
             </Col>
             <Col>
                 <Button className="add-button" onClick={()=>wordcloud()}>Word Cloud</Button>
+            </Col>
+            <Col>
+                <Button className="add-button" onClick={()=>visual()}>Visualization</Button>
+            </Col>
+            <Col>
+                <Button className="add-button" onClick={()=>recipeUpload()}>Recipe Upload</Button>
             </Col>
         </Row>                            
 <LexChat
