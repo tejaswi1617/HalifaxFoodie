@@ -5,7 +5,7 @@ const cors = require('cors')
 const port = process.env.PORT || 5000;
 
 const pubsubRoute = require('./api/routes/pubsub')
-
+const wordcloudRoute = require('./api/routes/wordcloud')
 
 app.use(cors())
 app.use(express.urlencoded({ limit: '5mb', extended: true }))
@@ -13,6 +13,7 @@ app.use(express.json())
 //app.use(express.static(path.join(__dirname, "client", "build")))
 
 app.use("/pubsub", pubsubRoute)
+app.use("/wordcloud", wordcloudRoute)
 
 // app.get("*", (req, res) => {
 //     res.sendFile(path.join(__dirname, "client", "build", "index.html"));
