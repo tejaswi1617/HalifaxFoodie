@@ -53,6 +53,9 @@ export default function Dashboard() {
     const visual=()=>{
         history.push('/visualization')
     }
+    const pubsub=()=>{
+        history.push('/pubsub')
+    }
     return (
         <div>
         <Row>
@@ -70,6 +73,9 @@ export default function Dashboard() {
             </Col>
             <Col>
                 <Button className="add-button" onClick={()=>recipeUpload()}>Recipe Upload</Button>
+            </Col>
+            <Col>
+                <Button className="add-button" onClick={()=>pubsub()}>One to One Chat</Button>
             </Col>
         </Row>                            
 <LexChat
