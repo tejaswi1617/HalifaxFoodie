@@ -35,7 +35,7 @@ function PubSubChat() {
   }
 
   const receiveMessage = async () => {
-    axios.get("http://localhost:5000/pubsub/receive/" + subscriptionName).then((response) => {
+    axios.get("https://csci5410-backend.herokuapp.com/pubsub/receive/" + subscriptionName).then((response) => {
       setData(response.data)
       console.log(response)
     }).catch((err) => {
