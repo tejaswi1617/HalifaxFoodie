@@ -54,25 +54,22 @@ router.post('/publish', async (req, res) => {
     }
 })
 
-router.get('/receive/:subscriptionName', async (req, res) => {
+router.get('/receive/:subscriptionName', async (req, res, next) => {
     const subscriptionName = req.params.subscriptionName;
-    const timeout = 600;
+    const timeout = 3;
 
     try {
         const subscription = pubSubClient.subscription(subscriptionName);
         const messageHandler = message => {
             console.log(`Data: ${message.data.toString()}`);
-            message.ack();
-            
+            message.ack(); 
+            res.write(message.data.toString() + "\n")  
         };
-        subscription.on('message', messageHandler);
-
+        subscription.on('message', messageHandler)
         setTimeout(() => {
             subscription.removeListener('message', messageHandler);
+            res.end();
         }, timeout * 1000);
-        res.status(200).json({
-            message: "message received",
-        })
     } catch (error) {
         console.log(error);
         res.status(500).json({
