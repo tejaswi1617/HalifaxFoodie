@@ -20,7 +20,16 @@ exports.handler = async (event, context, callback) => {
                 })
             }
         })
-
+        callback(null, {
+            "dialogAction": {
+                "type": "Close",
+                "fulfillmentState": "Fulfilled",
+                "message": {
+                    "contentType": "PlainText",
+                    "content": "We cannot find your order. Please check your order id."
+                }
+            }
+        })
     }).catch((err) => {
         console.log(err)
     })
