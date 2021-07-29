@@ -25,16 +25,7 @@ exports.handler = async (event, context, callback) => {
         });
       }
     });
-    callback(null, {
-      "dialogAction": {
-          "type": "Close",
-          "fulfillmentState": "Fulfilled",
-          "message": {
-              "contentType": "PlainText",
-              "content": "Status for order " + id + " is: " + element.status
-          }
-      }
-  })
+    
   }catch (err) {
     console.log(err);
   }
