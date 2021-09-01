@@ -8,9 +8,8 @@ def lambda_handler(event, context):
         orderTable = db.Table("userOrder")
         order =  orderTable.scan()
         orderData = order['Items']
-        print(orderData)
         orderDataList = []
-        print(orderData)
+
         for orderitem in orderData:
             
             oId=orderitem['orderId']
